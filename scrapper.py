@@ -20,6 +20,5 @@ import json
 f = open('data.json', encoding='UTF-8')
 data = json.load(f)
 for idx, item in enumerate(data):
-    print(str(item["url"]))
-    os.system("curl "+ str(item["url"]) + f" > data/image_{idx}.jpg")
+    os.system(f'curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --output data/image_{idx}.jpg ' + str(item["url"]))
 f.close()

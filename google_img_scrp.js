@@ -8,7 +8,7 @@ console.log(amount);
 
 const google = new Scraper({
   puppeteer: {
-    headless: false,
+    headless: true,
   },
 });
 
