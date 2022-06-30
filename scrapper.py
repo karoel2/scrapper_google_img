@@ -8,6 +8,7 @@ parser.add_argument('amount', metavar='AMOUNT', type=int,
                     help='amount of images to download')
 
 args = parser.parse_args()
+print(args)
 querry = args.querry
 amount = args.amount
 
@@ -19,5 +20,6 @@ import json
 f = open('data.json', encoding='UTF-8')
 data = json.load(f)
 for idx, item in enumerate(data):
+    print(str(item["url"]))
     os.system("curl "+ str(item["url"]) + f" > data/image_{idx}.jpg")
 f.close()
